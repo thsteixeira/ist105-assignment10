@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block styles %}
+        .btn-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 8px 4px;
+            background-color: #007bff;
+            color: #fff !important;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+        .btn-link:hover {
+            background-color: #0056b3;
+        }
+{% endblock %}
+
+{% block content %}
+    <h1>Click in one button to show API results</h1>
+
+    <a href="{% url 'get_token' %}" class="btn-link">Get Token</a><br>
+    <a href="{% url 'list_devices' %}" class="btn-link">List Devices</a><br>
+    <a href="{% url 'all_interfaces' %}" class="btn-link">List Interfaces</a>
+
+{% endblock %}

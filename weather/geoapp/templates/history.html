@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h2>Search History</h2>
+    <ul>
+        {% if not history %}
+            <li>No search history found.</li>
+        {% else %}
+            {% for h in history %}
+                <li>{{ h.search_timestamp }} - {{ h.continent }}</li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+  
+{% endblock %}

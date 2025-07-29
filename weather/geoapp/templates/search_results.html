@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h2>Search Results</h2>
+  <ul>
+    {% if not results %}
+      <li>No results found.</li>
+    {% else %}
+        {% for result in results %}
+        <li>
+            <strong>Country:</strong> {{ result.country }}<br>
+            <strong>Capital:</strong> {{ result.capital }}<br>
+            <strong>Population:</strong> {{ result.population }}<br>
+            <strong>Temperature:</strong> {{ result.temperature_celsius }}°C<br>
+            <strong>Weather:</strong> {{ result.weather_description }}<br>
+        </li>
+        {% endfor %}
+    {% endif %}
+  </ul>
+
+{% endblock %}
